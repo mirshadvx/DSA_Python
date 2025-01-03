@@ -31,6 +31,24 @@ class Linked_List:
         while current_node:
             current_node = current_node.next
             count += 1
+        return count
+            
+    def delete_middle(self):
+        length = self.get_list_len()
+        middle_index = length // 2
+        
+        prev_node = None
+        current = self.head
+        for _ in range(middle_index):
+            prev_node = current
+            current = current.next
+        
+        if prev_node is not None:
+            prev_node.next = current.next
+            if current == self.tail:
+                self.tail = prev_node
+            
+            
         
             
 List = Linked_List()
@@ -42,3 +60,7 @@ List.append(10)
 List.append(80)
 List.display()
 List.get_list_len()
+List.delete_middle()
+print()
+List.display()
+
