@@ -31,6 +31,25 @@ class Binary_tree:
                 self._insert(current.right, new_node)
                 
     
+    def in_order(self, current):
+        if current:
+            self.in_order(current.left)
+            print(current.data, end=' ')
+            self.in_order(current.right)
+    
+    def pre_order(self, current):
+        if current:
+            print(current.data, end=' ')
+            self.pre_order(current.left)
+            self.pre_order(current.right)
+    
+    def post_order(self, current):
+        if current:
+            self.post_order(current.left)
+            self.post_order(current.right)
+            print(current.data,end=' ')
+                
+    
 bst = Binary_tree()
 bst.insert(50)
 bst.insert(45)
@@ -39,3 +58,6 @@ bst.insert(30)
 bst.insert(100)
 bst.insert(20)
 bst.insert(75)
+bst.in_order(bst.root)
+bst.pre_order(bst.root)
+bst.post_order(bst.root)
