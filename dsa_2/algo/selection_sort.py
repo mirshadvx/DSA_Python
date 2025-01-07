@@ -7,4 +7,4 @@ for i in range(len(li) - 1):
             min_index = j
     li[i] , li[min_index] = li[min_index], li[i]
     
-print(li) 
+print(li)
