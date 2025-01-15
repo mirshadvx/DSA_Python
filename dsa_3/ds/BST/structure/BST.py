@@ -1,14 +1,13 @@
 class Node:
-    def __init__(self, data):
+    def __init__(self,data):
         self.data = data
         self.left = None
         self.right = None
         
-class Binary_tree:
+class BST:
     def __init__(self):
         self.root = None
-        
-
+    
     def insert(self, data):
         new_node = Node(data)
         
@@ -16,8 +15,8 @@ class Binary_tree:
             self.root = new_node
         else:
             self._insert(self.root, new_node)
-    
-    def _insert(self, current , new_node):
+            
+    def _insert(self, current, new_node):
         
         if new_node.data < current.data:
             if current.left is None:
@@ -29,7 +28,7 @@ class Binary_tree:
                 current.right = new_node
             else:
                 self._insert(current.right, new_node)
-                
+    
     
     def in_order(self, current):
         if current:
@@ -50,7 +49,7 @@ class Binary_tree:
             print(current.data,end=' ')
                 
     
-bst = Binary_tree()
+bst = BST()
 bst.insert(50)
 bst.insert(45)
 bst.insert(55)
@@ -59,5 +58,7 @@ bst.insert(100)
 bst.insert(20)
 bst.insert(75)
 bst.in_order(bst.root)
+print()
 bst.pre_order(bst.root)
+print()
 bst.post_order(bst.root)
